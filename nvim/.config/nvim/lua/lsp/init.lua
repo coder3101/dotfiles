@@ -3,7 +3,7 @@ local on_attach = require("lsp.mappings")
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "clangd", "cmake", "pylsp", "rls", "tsserver", "yamlls", "jsonls"}
+local servers = { "clangd", "cmake", "metals", "pylsp", "rls", "tsserver", "yamlls", "jsonls"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
