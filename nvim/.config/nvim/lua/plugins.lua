@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- QoL plugins
-    use 'hoob3rt/lualine.nvim'
+    use 'shadmansaleh/lualine.nvim'
     use 'sainnhe/gruvbox-material'
     use 'airblade/vim-gitgutter'
     use 'preservim/nerdtree'

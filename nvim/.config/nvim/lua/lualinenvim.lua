@@ -1,9 +1,9 @@
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
-    component_separators = {'|', '|'},
-    section_separators = {'', ''},
+    theme = 'gruvbox-material',
+    component_separators = {left = '|', right = '|'},
+    section_separators = {left = '', right = ''},
     disabled_filetypes = {}
   },
   sections = {
@@ -23,12 +23,7 @@ require'lualine'.setup {
     lualine_z = {}
   },
   tabline = {
-    lualine_a = {},
-    lualine_b = {'branch'},
-    lualine_c = {'filename'},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {}
+    lualine_a = {'buffers'},
   },
   extensions = {'fugitive', 'nerdtree', 'quickfix'}
 }
