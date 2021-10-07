@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- QoL plugins
-    use 'vim-airline/vim-airline'
+    use 'hoob3rt/lualine.nvim'
     use 'sainnhe/gruvbox-material'
     use 'airblade/vim-gitgutter'
     use 'preservim/nerdtree'
@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
+    use 'glepnir/lspsaga.nvim'
 
     -- Telescope
     use 'nvim-lua/popup.nvim'
