@@ -31,3 +31,7 @@ vim.opt.timeoutlen = 500
 vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 8
 vim.opt.diffopt:append "vertical"
+-- For better completion experiences
+-- Options
+vim.o.completeopt = "menuone,noinsert,noselect"
+vim.o.shortmess = vim.o.shortmess .. "c"

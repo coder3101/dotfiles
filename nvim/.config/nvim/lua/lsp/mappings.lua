@@ -1,6 +1,5 @@
 return function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  require('completion').on_attach(client)
   print('Language Server attached')
 
   -- Mappings.

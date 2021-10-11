@@ -12,12 +12,3 @@ end
 
 vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.smart_tab()', {expr=true, noremap=true})
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.smart_shift_tab()', {expr=true, noremap=true})
-
--- For better completion experiences
--- Options
-vim.o.completeopt = "menuone,noinsert,noselect"
-vim.o.shortmess = vim.o.shortmess .. "c"
-
--- Variables
-vim.g.completion_matching_strategy_list = {"exact","substring","fuzzy"}
-vim.g.completion_matching_smart_case = 1
