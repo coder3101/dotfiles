@@ -16,9 +16,9 @@ return function(client, bufnr)
   buf_set_keymap('n', '<leader>gt', "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 
   -- buf_set_keymap('n', '<leader>gr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  -- buf_set_keymap('n', '<leader>gR', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<leader>gR', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<leader>gr', "<cmd>lua require('lspsaga.rename').rename()<CR>", opts)
-  buf_set_keymap('n', '<leader>gR', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", opts)
+  -- buf_set_keymap('n', '<leader>gR', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", opts)
 
   -- buf_set_keymap('n', '<leader>n', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   -- buf_set_keymap('n', '<leader>N', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
@@ -29,8 +29,8 @@ return function(client, bufnr)
   buf_set_keymap('n', '<leader>af', "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", opts)
   buf_set_keymap('n', '<leader>ad', "<cmd>lua require('lspsaga.codeaction').range_code_action()<CR>", opts)
 
-  -- buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'K', "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  -- buf_set_keymap('n', 'K', "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
 
 
   -- buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)

@@ -35,3 +35,7 @@ vim.opt.diffopt:append "vertical"
 -- Options
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.shortmess = vim.o.shortmess .. "c"
+
+-- treesitter based fold express
+-- vim.wo.foldmethod = 'expr'
+-- vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'

@@ -1,7 +1,7 @@
 local nvim_lsp = require("lspconfig")
 local custom_attach = require("lsp.mappings")
 
-local servers = { "clangd", "cmake", "metals", "pylsp", "rls", "tsserver", "yamlls", "jsonls"}
+local servers = { "clangd", "cmake", "metals", "pyright", "rls", "tsserver", "yamlls", "jsonls"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
       on_attach = custom_attach,

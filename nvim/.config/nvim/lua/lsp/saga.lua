@@ -17,10 +17,10 @@ saga.init_lsp_saga {
       open = 'o', vsplit = 's',split = 'i',quit = '<esc>', scroll_down = '<leader><rj>', scroll_up = '<leader><rk>' -- quit can be a table
     },
     code_action_keys = {
-      quit = 'q',exec = '<CR>'
+      quit = '<esc>',exec = '<CR>'
     },
     rename_action_keys = {
-      quit = 'q',exec = '<CR>'  -- quit can be a table
+      quit = '<esc>',exec = '<CR>'  -- quit can be a table
     },
     border_style = "round",
 }
