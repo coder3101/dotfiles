@@ -60,8 +60,11 @@ vnoremap(">", ">gv")
 
 -- Troubly config
 
-nnoremap("<leader>xx", "<cmd>TroubleToggle<cr>")
-nnoremap("<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>")
-nnoremap("<leader>xd", "<cmd>Trouble lsp_document_diagnostics<cr>")
-nnoremap("<leader>xl", "<cmd>Trouble loclist<cr>")
-nnoremap("<leader>xq", "<cmd>Trouble quickfix<cr>")
+nnoremap("<leader>xx", "<cmd>TroubleToggle<CR>")
+nnoremap("<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<CR>")
+nnoremap("<leader>xd", "<cmd>Trouble lsp_document_diagnostics<CR>")
+nnoremap("<leader>xl", "<cmd>Trouble loclist<CR>")
+nnoremap("<leader>xq", "<cmd>Trouble quickfix<CR>")
+
+-- Nvim tree mapping
+nnoremap('<leader>e', "<cmd>NvimTreeToggle<CR>")

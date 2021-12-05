@@ -9,7 +9,8 @@ return require('packer').startup(function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'sainnhe/gruvbox-material'
     use 'airblade/vim-gitgutter'
-    use 'preservim/nerdtree'
+
+    use 'kyazdani42/nvim-tree.lua'
     use 'mbbill/undotree'
     use 'folke/trouble.nvim'
 
