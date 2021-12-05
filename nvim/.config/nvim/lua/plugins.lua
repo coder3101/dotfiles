@@ -6,11 +6,12 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- QoL plugins
-    use 'shadmansaleh/lualine.nvim'
+    use 'nvim-lualine/lualine.nvim'
     use 'sainnhe/gruvbox-material'
     use 'airblade/vim-gitgutter'
     use 'preservim/nerdtree'
     use 'mbbill/undotree'
+    use 'folke/trouble.nvim'
 
     -- its tpope!
     use 'tpope/vim-commentary'
@@ -30,5 +31,6 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
     use 'kyazdani42/nvim-web-devicons'
+
 
 end)

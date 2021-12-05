@@ -1,6 +1,7 @@
 local cmd = vim.api.nvim_command
 
 cmd("syntax enable")
+cmd("lang en_US.UTF-8")
 
 vim.opt.fileencoding = "utf-8"
 vim.opt.undofile = true

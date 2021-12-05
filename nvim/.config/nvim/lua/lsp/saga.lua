@@ -1,11 +1,17 @@
 local saga = require 'lspsaga'
 -- saga.init_lsp_saga()
 saga.init_lsp_saga {
-    use_saga_diagnostic_sign = false,
-    error_sign = 'E',
-    warn_sign = 'W',
-    hint_sign = 'H',
-    infor_sign = 'I',
+    use_saga_diagnostic_sign = true,
+    error_sign = '',
+    warn_sign = '',
+    hint_sign = '',
+    infor_sign = '',
+    dianostic_header_icon = '   ',
+    code_action_icon = ' ',
+    finder_definition_icon = '  ',
+    finder_reference_icon = '  ',
+    definition_preview_icon = '  ',
+    rename_prompt_prefix = '➤',
     code_action_prompt = {
       enable = true,
       sign = true,
