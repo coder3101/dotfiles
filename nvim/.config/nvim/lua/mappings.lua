@@ -58,3 +58,10 @@ vnoremap("<leader>/", ":Commentary<CR>")
 vnoremap("<", "<gv")
 vnoremap(">", ">gv")
 
+-- Troubly config
+
+nnoremap("<leader>xx", "<cmd>TroubleToggle<cr>")
+nnoremap("<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>")
+nnoremap("<leader>xd", "<cmd>Trouble lsp_document_diagnostics<cr>")
+nnoremap("<leader>xl", "<cmd>Trouble loclist<cr>")
+nnoremap("<leader>xq", "<cmd>Trouble quickfix<cr>")
