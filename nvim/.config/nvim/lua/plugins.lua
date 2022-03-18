@@ -13,6 +13,11 @@ return require('packer').startup(function(use)
     use 'kyazdani42/nvim-tree.lua'
     use 'mbbill/undotree'
     use 'folke/trouble.nvim'
+    use "Pocco81/AutoSave.nvim"
+    use 'windwp/nvim-autopairs'
+
+    -- Rust QoL
+    use 'simrat39/rust-tools.nvim'
 
     -- its tpope!
     use 'tpope/vim-commentary'

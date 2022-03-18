@@ -13,6 +13,9 @@ end
 
 require("plugins")
 require("settings")
+require("autocommands")
+require("autopairs")
+require("autosaves")
 require("colorschemes")
 require("mappings")
 

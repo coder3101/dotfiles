@@ -1,7 +1,8 @@
 local nvim_lsp = require("lspconfig")
 local custom_attach = require("lsp.mappings")
 
-local servers = { "clangd", "cmake", "gopls", "metals", "pyright", "rls", "tsserver", "yamlls", "jsonls"}
+local servers = { "clangd", "cmake", "gopls", "metals", "pyright", "rust_analyzer", "tsserver", "yamlls", "jsonls"}
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
       on_attach = custom_attach,
@@ -49,6 +50,34 @@ require'lspconfig'.sumneko_lua.setup {
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 
+local rustopts = {
+    tools = { -- rust-tools options
+        autoSetHints = true,
+        hover_with_actions = true,
+        inlay_hints = {
+            show_parameter_hints = false,
+            parameter_hints_prefix = "",
+            other_hints_prefix = "",
+        },
+    },
+
+    -- all the opts to send to nvim-lspconfig
+    -- these override the defaults set by rust-tools.nvim
+    -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
+    server = {
+        settings = {
+            -- to enable rust-analyzer settings visit:
+            -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+            ["rust-analyzer"] = {
+                -- enable clippy on save
+                checkOnSave = {
+                    command = "clippy"
+                },
+            }
+        }
+    },
+}
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = true,
@@ -56,6 +85,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     update_in_insert = false,
   }
 )
+require('rust-tools').setup(rustopts)
 require("lsp.saga")
 require("lsp.settings")
 require("lsp.cmp")
