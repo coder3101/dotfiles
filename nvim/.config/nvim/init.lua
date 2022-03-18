@@ -1,5 +1,5 @@
 -- Bootstrap Packer.nvim so that it is automatically installed
--- On new clones
+-- On new clones or installation
 
 local execute = vim.api.nvim_command
 local fn = vim.fn
