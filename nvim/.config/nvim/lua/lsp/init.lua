@@ -53,12 +53,14 @@ require'lspconfig'.sumneko_lua.setup {
 local rustopts = {
     tools = { -- rust-tools options
         autoSetHints = true,
-        hover_with_actions = true,
+        hover_with_actions = false,
+        on_initialized = function (_)
+            print("Rust analyzer: Workspace initialised")
+        end,
         inlay_hints = {
-            show_parameter_hints = false,
-            parameter_hints_prefix = "",
-            other_hints_prefix = "",
-        },
+            parameter_hints_prefix = " ← ",
+            other_hints_prefix = " → ",
+        }
     },
 
     -- all the opts to send to nvim-lspconfig
