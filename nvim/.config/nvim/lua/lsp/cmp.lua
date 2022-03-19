@@ -11,6 +11,7 @@ cmp.setup({
             -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
     },
+    preselect = cmp.PreselectMode.None,
     mapping = {
       ['<C-d>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -41,5 +42,8 @@ cmp.setup({
     sources = {
       { name = 'nvim_lsp' },
       { name = 'buffer' },
-    }
+    },
+    experimental = {
+        ghost_text = false, -- Conflicts with features of the copilot
+    },
 })

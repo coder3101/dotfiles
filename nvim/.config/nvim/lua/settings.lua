@@ -33,8 +33,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 8
 vim.opt.diffopt:append "vertical"
 -- For better completion experiences
+vim.opt.completeopt = {'menu', 'menuone', 'noselect', 'noinsert', 'preview'}
+
 -- Options
-vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.shortmess = vim.o.shortmess .. "c"
 
 -- treesitter based fold express
