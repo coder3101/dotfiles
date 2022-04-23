@@ -1,70 +1,58 @@
-local nnoremap = function(key, action)
-	vim.api.nvim_set_keymap('n', key, action, {noremap = true, silent=true})
-end
-
-local inoremap = function(key, action)
-	vim.api.nvim_set_keymap('i', key, action, {noremap = true, silent=true})
-end
-
-local tnoremap = function(key, action)
-	vim.api.nvim_set_keymap('t', key, action, {noremap = true, silent=true})
-end
-
-local vnoremap = function(key, action)
-	vim.api.nvim_set_keymap('v', key, action, {noremap = true, silent=true})
-end
-
 -- Setup leader
-nnoremap('<Space>', '<NOP>')
+vim.keymap.set("n", '<Space>', '<NOP>')
 vim.g.mapleader = " "
 
 -- Normal mode remaps
-nnoremap("<M-Down>", ":resize -2<CR>")
-nnoremap("<M-Up>", ":resize +2<CR>")
-nnoremap("<M-Left>", ":vertical resize +2<CR>")
-nnoremap("<M-Right>", ":vertical resize -2<CR>")
-nnoremap("<C-u>", "viwU<Esc>")
-nnoremap("<Tab>", ":bnext<CR>")
-nnoremap("<S-Tab>", ":bprevious<CR>")
-nnoremap("<C-h>","<C-w>h")
-nnoremap("<C-j>","<C-w>j")
-nnoremap("<C-k>","<C-w>k")
-nnoremap("<C-l>","<C-w>l")
+vim.keymap.set("n", "<M-Down>", "<cmd>resize -2<cr>")
+vim.keymap.set("n", "<M-Up>", "<cmd>resize +2<cr>")
+vim.keymap.set("n", "<M-Left>", "<cmd>vertical resize +2<cr>")
+vim.keymap.set("n", "<M-Right>", "<cmd>vertical resize -2<cr>")
+
+vim.keymap.set("n", "<C-u>", "<cmd>viwU<Esc>")
+
+vim.keymap.set("n", "<Tab>", "<cmd>bnext<cr>")
+vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<cr>")
+
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+
  -- Normal mode, leader based remaps
-nnoremap("<leader>t", ":terminal<CR>")
-nnoremap("<leader>j", ":cn<CR>")
-nnoremap("<leader>k", ":cp<CR>")
-nnoremap("<leader>gs", ":G<CR>")
-nnoremap("<leader>gf", ":diffget //2<CR>")
-nnoremap("<leader>gj", ":diffget //3<CR>")
-nnoremap("<leader>/", ":Commentary<CR>")
-nnoremap("<leader>o", "o<Esc>0_D")
-nnoremap("<leader>O", "O<Esc>0_D")
-nnoremap("<leader>u", ":UndotreeToggle<CR>")
+vim.keymap.set("n", "<leader>t", "<cmd>terminal<cr>")
+vim.keymap.set("n", "<leader>j", "<cmd>cn<cr>")
+vim.keymap.set("n", "<leader>k", "<cmd>cp<cr>")
+vim.keymap.set("n", "<leader>gs", "<cmd>G<cr>")
+vim.keymap.set("n", "<leader>gf", "<cmd>diffget //2<cr>")
+vim.keymap.set("n", "<leader>gj", "<cmd>diffget //3<cr>")
+vim.keymap.set("n", "<leader>/", "<cmd>Commentary<cr>")
+vim.keymap.set("n", "<leader>o", "o<Esc>0_D")
+vim.keymap.set("n", "<leader>O", "O<Esc>0_D")
+vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
 
 -- Insert mode remap
-inoremap("jj", "<Esc>")
-inoremap("<C-u>", "<Esc>viwUi")
+vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("i", "<C-u>", "<Esc>viwUi")
 
 -- Terminal mode remap
-tnoremap("jj", "<C-\\><C-N>")
-tnoremap("<C-h>","<C-\\><C-N><C-w>h")
-tnoremap("<C-j>","<C-\\><C-N><C-w>j")
-tnoremap("<C-k>","<C-\\><C-N><C-w>k")
-tnoremap("<C-l>","<C-\\><C-N><C-w>l")
+vim.keymap.set("t", "jj", "<C-\\><C-N>")
+vim.keymap.set("t", "<C-h>","<C-\\><C-N><C-w>h")
+vim.keymap.set("t", "<C-j>","<C-\\><C-N><C-w>j")
+vim.keymap.set("t", "<C-k>","<C-\\><C-N><C-w>k")
+vim.keymap.set("t", "<C-l>","<C-\\><C-N><C-w>l")
 
 -- Visual Mode remaps
-vnoremap("<leader>/", ":Commentary<CR>")
-vnoremap("<", "<gv")
-vnoremap(">", ">gv")
+vim.keymap.set("v", "<leader>/", ":Commentary<cr>")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- Troubly config
 
-nnoremap("<leader>xx", "<cmd>TroubleToggle<CR>")
-nnoremap("<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<CR>")
-nnoremap("<leader>xd", "<cmd>Trouble lsp_document_diagnostics<CR>")
-nnoremap("<leader>xl", "<cmd>Trouble loclist<CR>")
-nnoremap("<leader>xq", "<cmd>Trouble quickfix<CR>")
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>")
+vim.keymap.set("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>")
+vim.keymap.set("n", "<leader>xd", "<cmd>Trouble lsp_document_diagnostics<cr>")
+vim.keymap.set("n", "<leader>xl", "<cmd>Trouble loclist<cr>")
+vim.keymap.set("n", "<leader>xq", "<cmd>Trouble quickfix<cr>")
 
 -- Nvim tree mapping
-nnoremap('<leader>e', "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", '<leader>e', "<cmd>NvimTreeToggle<cr>")
