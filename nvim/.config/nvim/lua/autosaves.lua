@@ -13,6 +13,12 @@ autosave.setup(
         write_all_buffers = false,
         on_off_commands = true,
         clean_command_line_interval = 0,
-        debounce_delay = 135
+        debounce_delay = 155
     }
 )
+
+autosave.hook_before_saving = function ()
+    if vim.bo.filetype ~= "rust" then
+        vim.g.auto_save_abort = true -- abort saving non rust files
+    end
+end
