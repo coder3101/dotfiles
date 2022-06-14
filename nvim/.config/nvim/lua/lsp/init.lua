@@ -52,7 +52,7 @@ require'lspconfig'.sumneko_lua.setup {
 
 local rustopts = {
     tools = { -- rust-tools options
-        autoSetHints = true,
+        autoSetHints = false,
         hover_with_actions = false,
         on_initialized = function (_)
             print("Rust analyzer: Workspace initialised")

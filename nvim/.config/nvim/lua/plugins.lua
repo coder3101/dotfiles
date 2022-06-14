@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
 
     -- QoL plugins
     use 'nvim-lualine/lualine.nvim'
-    use 'sainnhe/gruvbox-material'
+    use 'ful1e5/onedark.nvim'
     use 'airblade/vim-gitgutter'
 
     use 'kyazdani42/nvim-tree.lua'
@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/nvim-cmp'
     use 'L3MON4D3/LuaSnip'
+    use 'folke/lsp-colors.nvim'
 
     -- Telescope
     use 'nvim-lua/popup.nvim'
