@@ -7,8 +7,9 @@ return require('packer').startup(function(use)
 
     -- QoL plugins
     use 'nvim-lualine/lualine.nvim'
-    use 'ful1e5/onedark.nvim'
-    use 'airblade/vim-gitgutter'
+    -- use 'ful1e5/onedark.nvim'
+    use 'marko-cerovac/material.nvim'
+    use 'lewis6991/gitsigns.nvim'
 
     use 'kyazdani42/nvim-tree.lua'
     use 'mbbill/undotree'

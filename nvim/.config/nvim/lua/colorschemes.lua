@@ -1,4 +1,3 @@
 vim.o.termguicolors = true
-vim.o.background = "dark"
-
-require('onedark').setup()
+vim.g.material_style = "oceanic"
+vim.cmd 'colorscheme material'
