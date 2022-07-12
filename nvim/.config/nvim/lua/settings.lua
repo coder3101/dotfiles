@@ -32,6 +32,8 @@ vim.opt.timeoutlen = 500
 vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 8
 vim.opt.diffopt:append "vertical"
+vim.g.do_filetype_lua = 1
+vim.did_load_filetypes = 0
 -- For better completion experiences
 vim.opt.completeopt = {'menu', 'menuone', 'noselect', 'noinsert', 'preview'}
 
