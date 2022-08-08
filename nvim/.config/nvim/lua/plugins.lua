@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
     use 'kyazdani42/nvim-tree.lua'
     use 'mbbill/undotree'
     use 'folke/trouble.nvim'
-    use "Pocco81/AutoSave.nvim"
+    use "Pocco81/auto-save.nvim"
     use 'windwp/nvim-autopairs'
 
     -- Rust QoL

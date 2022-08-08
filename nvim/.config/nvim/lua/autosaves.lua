@@ -1,24 +1,17 @@
-local autosave = require("autosave")
+local autosave = require("auto-save")
 
-autosave.setup(
-    {
-        enabled = true,
-        events = {"InsertLeave"},
-        conditions = {
-            exists = true,
-            filename_is_not = {},
-            filetype_is_not = {},
-            modifiable = true
-        },
-        write_all_buffers = false,
-        on_off_commands = true,
-        clean_command_line_interval = 0,
-        debounce_delay = 155
-    }
-)
+autosave.setup({
+    enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
+    trigger_events = {"InsertLeave", "TextChanged"}, -- vim events that trigger auto-save. See :h events
+	condition = function(buf)
+		local fn = vim.fn
 
-autosave.hook_before_saving = function ()
-    if vim.bo.filetype ~= "rust" then
-        vim.g.auto_save_abort = true -- abort saving non rust files
-    end
-end
+        -- Save modifiable rust files only
+		if fn.getbufvar(buf, "&filetype") == "rust" and fn.getbufvar(buf, "&modifiable") == 1
+			then
+			return true -- met condition(s), can save
+		end
+		return false -- can't save
+	end,
+    debounce_delay = 135, -- saves the file at most every `debounce_delay` milliseconds
+})
