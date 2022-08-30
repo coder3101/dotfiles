@@ -7,7 +7,7 @@ autosave.setup({
 		local fn = vim.fn
 
         -- Save modifiable rust files only
-		if fn.getbufvar(buf, "&filetype") == "rust" and fn.getbufvar(buf, "&modifiable") == 1
+		if (fn.getbufvar(buf, "&filetype") == "rust" or fn.getbufvar(buf, "&filetype") == "toml") and fn.getbufvar(buf, "&modifiable") == 1
 			then
 			return true -- met condition(s), can save
 		end
