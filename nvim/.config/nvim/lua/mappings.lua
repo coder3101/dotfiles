@@ -30,6 +30,14 @@ vim.keymap.set("n", "<leader>o", "o<Esc>0_D")
 vim.keymap.set("n", "<leader>O", "O<Esc>0_D")
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
 
+-- Blackhole remap
+vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("v", "<leader>d", "\"_d")
+
 -- Insert mode remap
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("i", "<C-u>", "<Esc>viwUi")
