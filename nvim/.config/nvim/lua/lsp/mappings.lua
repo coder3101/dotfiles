@@ -1,18 +1,19 @@
 return function(client, bufnr)
-  print('Language Server attached')
+  require('notify')("Attached langauge server")
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
 
   -- Mappings.
-  vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration)
-  vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition)
-  vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation)
-  vim.keymap.set('n', '<leader>gS', vim.lsp.buf.signature_help)
-  vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition)
-  vim.keymap.set('n', '<leader>gr', vim.lsp.buf.rename)
-  vim.keymap.set('n', '<leader>gR', vim.lsp.buf.references)
-  vim.keymap.set('n', '<leader>n',  vim.lsp.diagnostic.goto_prev)
-  vim.keymap.set('n', '<leader>N',  vim.lsp.diagnostic.goto_next)
-  vim.keymap.set('n', '<leader>af', vim.lsp.buf.code_action)
-  vim.keymap.set('n', 'K',          vim.lsp.buf.hover)
+  vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<leader>gS', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<leader>gr', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<leader>gR', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<leader>n',  vim.diagnostic.goto_prev, bufopts)
+  vim.keymap.set('n', '<leader>N',  vim.diagnostic.goto_next, bufopts)
+  vim.keymap.set('n', '<leader>af', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'K',          vim.lsp.buf.hover, bufopts)
 
 
   --vim.keymap.set('n', '<leader>q', vim.lsp.diagnostic.set_loclist)
@@ -21,9 +22,11 @@ return function(client, bufnr)
   --vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder)
 
   -- Set some keybinds conditional on server capabilities
-  if client.resolved_capabilities.document_formatting then
-    vim.keymap.set("n", "<leader>=", vim.lsp.buf.formatting)
-  elseif client.resolved_capabilities.document_range_formatting then
-    vim.keymap.set("v", "<leader>=", vim.lsp.buf.range_formatting)
+  local function format_code()
+    vim.lsp.buf.format()
+    require('notify')("Formatting completed")
+  end
+  if client.server_capabilities.documentFormattingProvider then
+    vim.keymap.set("n", "<leader>=", format_code, bufopts)
   end
 end

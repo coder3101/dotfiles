@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
 
     -- QoL plugins
     use 'nvim-lualine/lualine.nvim'
+    use 'rcarriga/nvim-notify'
     -- use 'ful1e5/onedark.nvim'
     use 'marko-cerovac/material.nvim'
     use 'lewis6991/gitsigns.nvim'

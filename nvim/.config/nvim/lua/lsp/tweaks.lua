@@ -48,14 +48,6 @@ local function goto_definition(split_cmd)
   return handler
 end
 
--- LSP settings (for overriding per client)
-local handlers =  {
-  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
-  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
-  ["textDocument/definition"] = goto_definition('split'),
-}
-
-vim.lsp.handlers = handlers
 
 vim.diagnostic.config({
   virtual_text = {
