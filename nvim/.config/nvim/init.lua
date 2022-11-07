@@ -46,5 +46,4 @@ require("ashar.plugins.lsp.lspconfig")
 require("ashar.plugins.lsp.lspconfig")
 require("ashar.plugins.autopairs")
 require("ashar.plugins.autosave")
-require("lua.ashar.plugins.gitsigns")
-
+require("ashar.plugins.gitsigns")
