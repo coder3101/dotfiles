@@ -33,8 +33,8 @@ local function on_attach(client, bufnr)
     -- vim.keymap.set('n', '<leader>af', vim.lsp.buf.code_action, bufopts)
     -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
 
-    vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', '<leader>gd', "<cmd>Lspsaga peek_definition<CR>", bufopts)
+    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', '<leader>gD', "<cmd>Lspsaga peek_definition<CR>", bufopts)
     vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<leader>gS', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, bufopts)
@@ -63,21 +63,7 @@ end
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
-local servers = {
-    "tsserver",
-    "html",
-    "cssls",
-    "tailwindcss",
-    "gopls",
-    "clangd",
-    "pyright",
-    "yamlls",
-    "jsonls",
-    "dockerls",
-    "bashls",
-    "svelte",
-    "taplo"
-}
+local servers = require("ashar.plugins.lsp.servers")
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -139,3 +125,24 @@ local rustopts = {
 }
 
 rust_tools.setup(rustopts)
+
+vim.diagnostic.config({
+  virtual_text = {
+   source = "always",  -- Or "if_many"
+   prefix = '●'
+  },
+  float = {
+   source = "always",  -- Or "if_many"
+  },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = false,
+})
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+

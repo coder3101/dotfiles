@@ -13,21 +13,5 @@ end
 mason.setup()
 
 mason_lspconfig.setup({
-    ensure_installed = {
-        "tsserver",
-        "html",
-        "cssls",
-        "tailwindcss",
-        "sumneko_lua",
-        "gopls",
-        "clangd",
-        "pyright",
-        "rust_analyzer",
-        "yamlls",
-        "jsonls",
-        "dockerls",
-        "bashls",
-        "svelte",
-        "taplo"
-    }
+    ensure_installed = require("ashar.plugins.lsp.servers")
 })
