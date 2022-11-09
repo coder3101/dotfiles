@@ -45,4 +45,8 @@ vim.opt.updatetime = 300
 vim.opt.timeoutlen = 500
 vim.opt.scrolloff = 8
 
+vim.opt.hidden = true
+vim.opt.hlsearch = false
+vim.opt.undofile = true
+
 opt.iskeyword:append("-")
