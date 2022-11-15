@@ -1,4 +1,7 @@
-local autosave = require("auto-save")
+local status, autosave = pcall(require,"auto-save")
+if not status then
+    return
+end
 
 autosave.setup({
     enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
