@@ -14,6 +14,7 @@ opt.autoindent = true
 -- search settings
 opt.ignorecase = true
 opt.smartcase = true
+opt.wrap = false
 
 -- cursor line
 opt.cursorline = true
