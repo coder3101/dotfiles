@@ -39,12 +39,10 @@ keymap.set("n", "<leader>t", "<cmd>terminal<cr>")
 keymap.set("n", "<leader>j", "<cmd>cn<cr>")
 keymap.set("n", "<leader>k", "<cmd>cp<cr>")
 keymap.set("n", "<leader>gs", "<cmd>G<cr>")
-keymap.set("n", "<leader>/", "<cmd>Commentary<cr>")
 keymap.set("n", "<leader>o", "o<Esc>0_D")
 keymap.set("n", "<leader>O", "O<Esc>0_D")
 keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
 
 -- Visual Mode remaps
-vim.keymap.set("v", "<leader>/", ":Commentary<cr>")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
