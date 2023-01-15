@@ -1,4 +1,5 @@
 local telescope_setup, telescope = pcall(require, "telescope")
+require("ashar.plugins.lsp.lspconfig")
 if not telescope_setup then
     vim.notify("Failed to import telescope", "error")
     return

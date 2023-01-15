@@ -29,10 +29,10 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- Terminal mode remap
 keymap.set("t", "jj", "<C-\\><C-N>")
-keymap.set("t", "<C-h>","<C-\\><C-N><C-w>h")
-keymap.set("t", "<C-j>","<C-\\><C-N><C-w>j")
-keymap.set("t", "<C-k>","<C-\\><C-N><C-w>k")
-keymap.set("t", "<C-l>","<C-\\><C-N><C-w>l")
+keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h")
+keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j")
+keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k")
+keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l")
 
 -- Normal mode, leader based remaps
 keymap.set("n", "<leader>t", "<cmd>terminal<cr>")

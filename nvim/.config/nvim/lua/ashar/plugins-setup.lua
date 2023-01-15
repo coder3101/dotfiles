@@ -63,7 +63,13 @@ return require('packer').startup(function(use)
     use "neovim/nvim-lspconfig"
 
     use "hrsh7th/cmp-nvim-lsp"
-    use({ "glepnir/lspsaga.nvim", branch = "main" })
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            require('lspsaga').setup({})
+        end,
+    })
     use 'simrat39/rust-tools.nvim'
     use 'onsails/lspkind.nvim'
 
