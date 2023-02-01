@@ -4,4 +4,10 @@ if not status then
     return
 end
 
+notify.setup({
+    max_width = 100,
+    timeout = 5000,
+    top_down = false
+})
+
 vim.notify = notify
