@@ -62,9 +62,13 @@ local function on_attach(client, bufnr)
 end
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
+-- Register LSP as UFO folding provider
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
 
 local servers = require("ashar.plugins.lsp.servers")
-
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = on_attach,

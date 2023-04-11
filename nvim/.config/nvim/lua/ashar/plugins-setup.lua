@@ -62,6 +62,8 @@ return require('packer').startup(function(use)
     use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig"
 
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+
     use "hrsh7th/cmp-nvim-lsp"
     use({
         "glepnir/lspsaga.nvim",

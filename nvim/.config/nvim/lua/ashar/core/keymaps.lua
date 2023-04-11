@@ -3,7 +3,17 @@ local keymap = vim.keymap
 
 -- general keymaps
 keymap.set("i", "jj", "<ESC>")
+
+-- Send every type fo cut into blackhole
 keymap.set("n", "x", '"_x')
+keymap.set("n", "<leader>d", '"_d')
+keymap.set("n", "<leader>dp", '"_dp')
+keymap.set("n", "c", '"_c')
+
+keymap.set("v", "<leader>x", '"_x')
+keymap.set("v", "<leader>d", '"_d')
+keymap.set("v", "<leader>dp", '"_dp')
+keymap.set("v", "<leader>c", '"_c')
 
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
@@ -13,7 +23,8 @@ keymap.set("n", "<M-Up>", "<cmd>resize +2<cr>")
 keymap.set("n", "<M-Left>", "<cmd>vertical resize +2<cr>")
 keymap.set("n", "<M-Right>", "<cmd>vertical resize -2<cr>")
 
-keymap.set("n", "<C-u>", "<cmd>viwU<Esc>")
+keymap.set("n", "{", "<C-d>")
+keymap.set("n", "}", "<C-u>")
 
 keymap.set("n", "<leader>sv", "<C-w>v")
 keymap.set("n", "<leader>sh", "<C-w>s")
