@@ -49,6 +49,14 @@ return require('packer').startup(function(use)
 
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
+    use {
+        'saecki/crates.nvim',
+        tag = 'v0.3.0',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('crates').setup()
+        end,
+    }
 
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"

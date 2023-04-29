@@ -56,6 +56,7 @@ cmp.setup({
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
+        { name = "crates" },
     }),
     experimental = {
         ghost_text = false, -- Conflicts with features of the copilot
