@@ -66,6 +66,8 @@ return require('packer').startup(function(use)
     use "saadparwaiz1/cmp_luasnip"
     use "rafamadriz/friendly-snippets"
 
+    use "jose-elias-alvarez/null-ls.nvim"
+    use "jay-babu/mason-null-ls.nvim"
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig"
