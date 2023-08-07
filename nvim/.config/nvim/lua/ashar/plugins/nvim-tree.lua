@@ -78,6 +78,7 @@ nvimtree.setup({
     vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
     vim.keymap.set('n', 'D', api.fs.trash, opts('Trash'))
     vim.keymap.set('n', 'm', api.fs.rename_sub, opts('Rename: Basename'))
+    vim.keymap.set('n', 'M', api.marks.toggle, opts('Bookmarks Toggle'))
     vim.keymap.set('n', 'g?', api.tree.toggle_help, opts('Help'))
     vim.keymap.set('n', 'gy', api.fs.copy.absolute_path, opts('Copy Absolute Path'))
     vim.keymap.set('n', 'H', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))

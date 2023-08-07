@@ -28,11 +28,17 @@ telescope.setup({
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
             }
+        },
+    },
+    extensions = {
+        project = {
+            sync_with_nvim_tree = true
         }
     }
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("project")
 
 
 local neovimrc = function()
@@ -51,6 +57,10 @@ local git_branches = function()
         end
     })
 end
+
+vim.keymap.set('n', '<leader>pp', function()
+    require('telescope').extensions.project.project { display_type = 'full' }
+end)
 
 
 vim.keymap.set('n', '<leader>ps', function()

@@ -48,6 +48,7 @@ return require('packer').startup(function(use)
     use "Pocco81/auto-save.nvim"
 
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+    use "nvim-telescope/telescope-project.nvim"
     use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
     use {
         'saecki/crates.nvim',
@@ -73,7 +74,75 @@ return require('packer').startup(function(use)
     use "neovim/nvim-lspconfig"
 
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
-
+    use {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                theme = 'doom',
+                config = {
+                    center = {
+                        {
+                            desc = "Find File",
+                            keymap = "",
+                            key = "f",
+                            icon = "  ",
+                            action = "Telescope find_files",
+                        },
+                        {
+                            desc = "Recents",
+                            keymap = "",
+                            key = "r",
+                            icon = "  ",
+                            action = "Telescope oldfiles",
+                        },
+                        {
+                            desc = "New File",
+                            keymap = "",
+                            key = "n",
+                            icon = "  ",
+                            action = "enew",
+                        },
+                        {
+                            desc = "Update Plugins",
+                            keymap = "",
+                            key = "u",
+                            icon = "  ",
+                            action = "PackerSync",
+                        },
+                        {
+                            desc = "Manage Extensions",
+                            keymap = "",
+                            key = "m",
+                            icon = "  ",
+                            action = "Mason",
+                        },
+                        {
+                            desc = "Config",
+                            keymap = "",
+                            key = "s",
+                            icon = "  ",
+                            action = "Telescope find_files cwd=~/.config/nvim",
+                        },
+                        {
+                            desc = "Exit",
+                            keymap = "",
+                            key = "q",
+                            icon = "  ",
+                            action = "exit",
+                        },
+                    },
+                    footer = {
+                        [[. ,-"-.   ,-"-. ,-"-.   ,-"-. ,-"-.   ,]],
+                        [[ X | | \ / | | X | | \ / | | X | | \ / ]],
+                        [[/ \| | |X| | |/ \| | |X| | |/ \| | |X| ]],
+                        [[   `-!-' `-!-"   `-!-' `-!-'   `-!-' `-]],
+                    }
+                }
+            }
+        end,
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
     use "hrsh7th/cmp-nvim-lsp"
     use({
         "glepnir/lspsaga.nvim",
