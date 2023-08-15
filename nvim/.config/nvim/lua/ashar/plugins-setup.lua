@@ -90,6 +90,13 @@ return require('packer').startup(function(use)
                             action = "Telescope find_files",
                         },
                         {
+                            desc = "Find Project",
+                            keymap = "",
+                            key = "p",
+                            icon = "  ",
+                            action = "Telescope project",
+                        },
+                        {
                             desc = "Recents",
                             keymap = "",
                             key = "r",
