@@ -67,10 +67,9 @@ return require('packer').startup(function(use)
     use "saadparwaiz1/cmp_luasnip"
     use "rafamadriz/friendly-snippets"
 
-    use "jose-elias-alvarez/null-ls.nvim"
-    use "jay-babu/mason-null-ls.nvim"
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
+    use "mfussenegger/nvim-lint"
     use "neovim/nvim-lspconfig"
 
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
@@ -152,7 +151,7 @@ return require('packer').startup(function(use)
     }
     use "hrsh7th/cmp-nvim-lsp"
     use({
-        "glepnir/lspsaga.nvim",
+        "nvimdev/lspsaga.nvim",
         branch = "main",
         config = function()
             require('lspsaga').setup({

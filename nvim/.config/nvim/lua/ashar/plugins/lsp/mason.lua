@@ -11,7 +11,6 @@ if not mason_lspconfig_status then
 end
 
 mason.setup()
-
 mason_lspconfig.setup({
     ensure_installed = require("ashar.plugins.lsp.servers")
 })
