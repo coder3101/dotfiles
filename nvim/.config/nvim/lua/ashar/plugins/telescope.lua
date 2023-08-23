@@ -32,7 +32,10 @@ telescope.setup({
     },
     extensions = {
         project = {
-            sync_with_nvim_tree = true
+            sync_with_nvim_tree = true,
+            on_project_selected = function (_)
+                require("nvim-tree.api").api.tree.focus()
+            end
         }
     }
 })
