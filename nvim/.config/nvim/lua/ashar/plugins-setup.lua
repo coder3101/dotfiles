@@ -173,6 +173,17 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
 
+    use {
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            "nvim-neotest/neotest-go",
+            "rouge8/neotest-rust",
+            "nvim-neotest/neotest-python"
+        }
+    }
     use 'numToStr/Comment.nvim'
 
     use 'lewis6991/gitsigns.nvim'

@@ -7,7 +7,7 @@ opt.number = true
 -- tabs and indents
 opt.tabstop = 4
 opt.shiftwidth = 4
-vim.opt.smarttab = true
+opt.smarttab = true
 opt.expandtab = true
 opt.autoindent = true
 
@@ -34,20 +34,21 @@ opt.clipboard:append("unnamedplus")
 opt.splitbelow = true
 opt.splitright = true
 
-vim.opt.pumheight = 15
-vim.opt.ruler = true
-vim.opt.cmdheight = 2
-vim.opt.mouse = "a"
+opt.pumheight = 15
+opt.ruler = true
+opt.cmdheight = 2
+opt.mouse = "a"
 
-vim.opt.backup = false
-vim.opt.writebackup = false
+opt.backup = false
+opt.writebackup = false
 
-vim.opt.updatetime = 300
-vim.opt.timeoutlen = 500
-vim.opt.scrolloff = 8
+opt.updatetime = 300
+opt.timeoutlen = 500
+opt.scrolloff = 8
 
-vim.opt.hidden = true
-vim.opt.hlsearch = false
-vim.opt.undofile = true
+opt.hidden = true
+opt.hlsearch = false
+opt.undofile = true
+opt.shortmess:append({ I = true })
 
 opt.iskeyword:append("-")
