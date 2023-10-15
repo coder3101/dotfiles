@@ -8,6 +8,6 @@ require("neotest").setup({
     },
 })
 
-vim.keymap.set("n", "<leader>s", "<cmd>Neotest summary<cr>")
+vim.keymap.set("n", "<leader>ss", "<cmd>Neotest summary<cr>")
 vim.keymap.set("n", "<leader>zz", "<cmd>Neotest output-panel<cr>")
 vim.keymap.set("n", "<leader>rr", "<cmd>Neotest run<cr>")
