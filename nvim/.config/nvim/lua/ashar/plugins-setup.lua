@@ -33,8 +33,14 @@ return require('packer').startup(function(use)
     use 'christoomey/vim-tmux-navigator'
     use 'szw/vim-maximizer'
 
-    use 'tpope/vim-surround'
     use 'tpope/vim-fugitive'
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({})
+        end
+    })
 
     use 'vim-scripts/ReplaceWithRegister'
     use 'rcarriga/nvim-notify'
@@ -157,7 +163,7 @@ return require('packer').startup(function(use)
     use "hrsh7th/cmp-nvim-lsp"
     use({
         "nvimdev/lspsaga.nvim",
-        branch = "main",
+        after = 'nvim-lspconfig',
         config = function()
             require('lspsaga').setup({
                 symbol_in_winbar = {
