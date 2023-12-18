@@ -53,6 +53,7 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
+        { name = 'copilot' },
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
@@ -63,7 +64,9 @@ cmp.setup({
     },
     formatting = {
         format = lspkind.cmp_format({
+            mode = "symbol",
             maxwidth = 50,
+            symbol_map = { Copilot = "" },
             ellipsis_char = "..."
         })
     }
