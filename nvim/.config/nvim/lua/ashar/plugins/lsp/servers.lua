@@ -4,7 +4,6 @@ return {
     "cssls",
     "tailwindcss",
     "gopls",
-    "clangd",
     "pyright",
     "yamlls",
     "jsonls",
