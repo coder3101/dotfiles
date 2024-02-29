@@ -82,6 +82,8 @@ return require('packer').startup(function(use)
     use "williamboman/mason-lspconfig.nvim"
     use "mfussenegger/nvim-lint"
     use "neovim/nvim-lspconfig"
+    use "huggingface/llm.nvim"
+    use "David-Kunz/gen.nvim"
 
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
     use {

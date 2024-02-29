@@ -11,6 +11,7 @@ return {
     "bashls",
     "svelte",
     "taplo",
+    "perlnavigator",
     "lua_ls",
 
     -- "gofumpt",
