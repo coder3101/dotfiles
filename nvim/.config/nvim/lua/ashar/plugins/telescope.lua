@@ -42,6 +42,7 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 telescope.load_extension("project")
+telescope.load_extension("ui-select")
 
 
 local neovimrc = function()
