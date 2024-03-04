@@ -5,7 +5,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-neotest/neotest-go",
-		"mrcjkb/rustaceanvim",
+		"rouge8/neotest-rust",
 		"nvim-neotest/neotest-python",
 	},
 	config = function()
@@ -15,7 +15,7 @@ return {
 					args = { "-count=1", "-timeout=30s" },
 				}),
 				require("neotest-python"),
-				require("rustaceanvim.neotest"),
+				require("neotest-rust"),
 			},
 		})
 		vim.keymap.set("n", "<leader>ts", "<cmd>Neotest summary<cr>", { desc = "[T]est [Summary]" })
