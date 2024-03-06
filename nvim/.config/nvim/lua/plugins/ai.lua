@@ -3,7 +3,7 @@ return {
 	opts = {
 		api_token = nil,
 		backend = "ollama",
-		model = "starcoder",
+		model = "starcoder2",
 		url = "http://localhost:11434/api/generate",
 		tokens_to_clear = { "<|endoftext|>" },
 		fim = {
