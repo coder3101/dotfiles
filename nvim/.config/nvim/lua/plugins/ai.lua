@@ -1,5 +1,6 @@
 return {
 	"huggingface/llm.nvim",
+	enabled = false,
 	opts = {
 		api_token = nil,
 		backend = "ollama",
