@@ -4,13 +4,6 @@ local opt = vim.opt
 opt.relativenumber = true
 opt.number = true
 
--- tabs and indents
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.smarttab = true
-opt.expandtab = true
-opt.autoindent = true
-
 -- search settings
 opt.ignorecase = true
 opt.smartcase = true

@@ -1,24 +1,18 @@
-require("ashar.plugins-setup")
-require("ashar.core.options")
-require("ashar.core.keymaps")
-require("ashar.core.colorscheme")
+-- Bootstrap lazy.nvim in new machines
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
 
-
-require("ashar.plugins.treesitter")
-require("ashar.plugins.notify")
-require("ashar.plugins.nvim-tree")
-require("ashar.plugins.nvim-cmp")
-require("ashar.plugins.lualine")
-require("ashar.plugins.telescope")
-require("ashar.plugins.lsp.mason")
--- require("ashar.plugins.lsp.nvim-lint")
-require("ashar.plugins.lsp.lspconfig")
-require("ashar.plugins.lsp.llm")
-require("ashar.plugins.llmgen")
-require("ashar.plugins.autopairs")
-require("ashar.plugins.autosave")
-require("ashar.plugins.gitsigns")
-require("ashar.plugins.troubley")
-require("ashar.plugins.comment")
-require("ashar.plugins.ufo")
-require("ashar.plugins.neotest")
+-- Common options
+require("common.options")
+require("common.keymaps")
+require("lazy").setup("plugins")

@@ -1,4 +1,6 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 local keymap = vim.keymap
 
 -- general keymaps
@@ -36,8 +38,6 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>")
 keymap.set("n", "<leader>tn", ":tabn<CR>")
 keymap.set("n", "<leader>tp", ":tabp<CR>")
 
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
-
 -- Terminal mode remap
 keymap.set("t", "jj", "<C-\\><C-N>")
 keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h")
@@ -46,13 +46,12 @@ keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k")
 keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l")
 
 -- Normal mode, leader based remaps
-keymap.set("n", "<leader>t", "<cmd>terminal<cr>")
+keymap.set("n", "<leader>T", "<cmd>terminal<cr>")
 keymap.set("n", "<leader>j", "<cmd>cn<cr>")
 keymap.set("n", "<leader>k", "<cmd>cp<cr>")
 keymap.set("n", "<leader>gs", "<cmd>G<cr>")
 keymap.set("n", "<leader>o", "o<Esc>0_D")
 keymap.set("n", "<leader>O", "O<Esc>0_D")
-keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
 
 -- Visual Mode remaps
 vim.keymap.set("v", "<", "<gv")
