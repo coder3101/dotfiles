@@ -21,7 +21,7 @@ return {
 		-- Set up format-on-save
 		format_on_save = function(bufnr)
 			-- Disable autoformat on certain filetypes
-			local ignore_filetypes = { "rust" }
+			local ignore_filetypes = { "rust", "json" }
 			if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
 				return
 			end
