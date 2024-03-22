@@ -6,6 +6,7 @@ return { -- LSP Configuration & Plugins
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"nvimdev/lspsaga.nvim",
+		"ray-x/lsp_signature.nvim",
 
 		-- Useful status updates for LSP.
 		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -192,6 +193,14 @@ return { -- LSP Configuration & Plugins
 		--  You can press `g?` for help in this menu
 		require("mason").setup()
 
+		-- Setup signature completion as I type
+		require("lsp_signature").setup({
+			bind = true,
+			handler_opts = {
+				border = "rounded",
+			},
+			hint_enable = false,
+		})
 		-- You can add other tools here that you want Mason to install
 		-- for you, so that they are available from within Neovim.
 		local ensure_installed = vim.tbl_keys(servers or {})
@@ -212,7 +221,7 @@ return { -- LSP Configuration & Plugins
 				end,
 			},
 		})
-		require("lspsaga").setup({})
+		require("lspsaga").setup()
 		vim.diagnostic.config({
 			virtual_text = {
 				source = "always", -- Or "if_many"

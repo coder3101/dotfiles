@@ -21,7 +21,10 @@ return { -- Collection of various small independent plugins/modules
 		--  You could remove this setup call if you don't like it,
 		--  and try some other statusline plugin
 		local statusline = require("mini.statusline")
-		statusline.setup()
+		statusline.setup({
+			set_vim_settings = false,
+			laststatus = 3,
+		})
 
 		-- You can configure sections in the statusline by overriding their
 		-- default behavior. For example, here we disable the section for
