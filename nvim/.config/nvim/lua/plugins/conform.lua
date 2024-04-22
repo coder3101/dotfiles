@@ -17,6 +17,7 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			javascript = { "prettier" },
+			go = { "goimports", "gofmt" },
 		},
 		-- Set up format-on-save
 		format_on_save = function(bufnr)

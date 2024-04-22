@@ -1,5 +1,5 @@
 return {
-	"nvim-treesitter/nvim-treesitter-context", -- To show on top of the screen the current context of the cursor
+	-- "nvim-treesitter/nvim-treesitter-context", -- To show on top of the screen the current context of the cursor
 	"nvim-treesitter/nvim-treesitter-textobjects", -- Additional textobjects for treesitter
 	{ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
