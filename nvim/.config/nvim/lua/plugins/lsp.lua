@@ -48,6 +48,9 @@ return { -- LSP Configuration & Plugins
 				-- Rename the variable under your cursor
 				--  Most Language Servers support renaming across files, etc.
 				map("<leader>gr", "<cmd>Lspsaga rename<CR>", "[R]ename")
+				map("<leader>ih", function()
+					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
+				end, "Toggle [I]nlay [H]ints")
 
 				-- Execute a code action, usually your cursor needs to be on top of an error
 				-- or a suggestion from your LSP for this to activate.
@@ -88,11 +91,47 @@ return { -- LSP Configuration & Plugins
 							unusedparams = true,
 						},
 						staticcheck = true,
+						hints = {
+							rangeVariableTypes = true,
+							parameterNames = true,
+							constantValues = true,
+							assignVariableTypes = true,
+							compositeLiteralFields = true,
+							compositeLiteralTypes = true,
+							functionTypeParameters = true,
+						},
 					},
 				},
 			},
 			pyright = {},
-			tsserver = {},
+			tsserver = {
+				settings = {
+					typescript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
+					},
+					javascript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
+					},
+				},
+			},
 			html = {},
 			cssls = {},
 			tailwindcss = {},
@@ -101,11 +140,51 @@ return { -- LSP Configuration & Plugins
 			dockerls = {},
 			bashls = {},
 			svelte = {},
-			rust_analyzer = {},
+			rust_analyzer = {
+				settings = {
+					["rust-analyzer"] = {
+						inlayHints = {
+							bindingModeHints = {
+								enable = false,
+							},
+							chainingHints = {
+								enable = true,
+							},
+							closingBraceHints = {
+								enable = true,
+								minLines = 25,
+							},
+							closureReturnTypeHints = {
+								enable = "never",
+							},
+							lifetimeElisionHints = {
+								enable = "never",
+								useParameterNames = false,
+							},
+							maxLength = 25,
+							parameterHints = {
+								enable = true,
+							},
+							reborrowHints = {
+								enable = "never",
+							},
+							renderColons = true,
+							typeHints = {
+								enable = true,
+								hideClosureInitialization = false,
+								hideNamedConstructor = false,
+							},
+						},
+					},
+				},
+			},
 
 			lua_ls = {
 				settings = {
 					Lua = {
+						hint = {
+							enable = true,
+						},
 						runtime = { version = "LuaJIT" },
 						workspace = {
 							checkThirdParty = false,
