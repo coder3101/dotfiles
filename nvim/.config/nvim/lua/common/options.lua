@@ -13,6 +13,7 @@ opt.wrap = false
 opt.cursorline = true
 
 -- appearance
+opt.guifont = "JetbrainsMono Nerd Font"
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
