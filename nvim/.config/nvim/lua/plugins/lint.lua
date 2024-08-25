@@ -1,10 +1,10 @@
 return {
 	"mfussenegger/nvim-lint",
+	enabled = false,
 	config = function()
 		require("lint").linters_by_ft = {
 			proto = { "buf_lint", "protolint" },
 			rust = { "clippy" },
-			gitcommit = { "commitlint" },
 		}
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 			callback = function()

@@ -6,7 +6,7 @@ return {
 		{
 			"<leader>=",
 			function()
-				require("conform").format({ async = true, lsp_fallback = true })
+				require("conform").format({ async = true, lsp_format = "fallback" })
 			end,
 			mode = "",
 			desc = "Format buffer",
@@ -19,14 +19,14 @@ return {
 			javascript = { "prettier" },
 			go = { "goimports", "gofmt" },
 		},
-		-- Set up format-on-save
-		format_on_save = function(bufnr)
+		-- -- Set up format-after-save
+		format_after_save = function(bufnr)
 			-- Disable autoformat on certain filetypes
 			local ignore_filetypes = { "rust", "json" }
 			if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
 				return
 			end
-			return { timeout_ms = 500, lsp_fallback = true }
+			return { timeout_ms = 500, lsp_format = "fallback" }
 		end,
 	},
 }
