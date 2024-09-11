@@ -104,7 +104,7 @@ return { -- LSP Configuration & Plugins
 				},
 			},
 			pyright = {},
-			tsserver = {
+			ts_ls = {
 				settings = {
 					typescript = {
 						inlayHints = {
