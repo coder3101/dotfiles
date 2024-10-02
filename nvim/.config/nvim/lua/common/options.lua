@@ -37,7 +37,7 @@ opt.backup = false
 opt.writebackup = false
 
 opt.updatetime = 300
-opt.timeoutlen = 500
+opt.timeoutlen = 250
 opt.scrolloff = 8
 
 opt.hidden = true
