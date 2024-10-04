@@ -28,6 +28,8 @@ return {
 			cmp.event:on("menu_closed", function()
 				vim.b.copilot_suggestion_hidden = false
 			end)
+
+			vim.keymap.set("n", "<leader>ai", ai.toggle_auto_trigger, { desc = "Enable [A][I] auto suggestion" })
 		end,
 	},
 
