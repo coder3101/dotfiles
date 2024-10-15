@@ -97,6 +97,7 @@ return { -- LSP Configuration & Plugins
 			gopls = {
 				settings = {
 					gopls = {
+						buildFlags = { "-tags=integration sandbox" },
 						analyses = {
 							unusedparams = true,
 						},
