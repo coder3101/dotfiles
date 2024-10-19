@@ -229,14 +229,14 @@ return { -- LSP Configuration & Plugins
 				end,
 			},
 		})
-		require("lspsaga").setup()
+		require("lspsaga").setup({
+			lightbulb = {
+				enable = false,
+			},
+		})
 		vim.diagnostic.config({
 			virtual_text = {
-				source = "always", -- Or "if_many"
 				prefix = "●",
-			},
-			float = {
-				source = "always", -- Or "if_many"
 			},
 			signs = true,
 			underline = true,

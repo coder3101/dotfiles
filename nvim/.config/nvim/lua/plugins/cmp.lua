@@ -27,65 +27,41 @@ return { -- Autocompletion
 		local lspkind = require("lspkind")
 		luasnip.config.setup({})
 
-		local has_words_before = function()
-			if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-				return false
-			end
-			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-			return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
-		end
-
 		cmp.setup({
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
+					-- vim.snippet.expand(args.body)
 				end,
 			},
 			completion = { completeopt = "menu,menuone,noselect" },
+			-- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
 			preselect = cmp.PreselectMode.None,
 
 			mapping = cmp.mapping.preset.insert({
 				-- Select the [n]ext item
-				-- ["<C-n>"] = cmp.mapping.select_next_item(),
+				["<C-j>"] = cmp.mapping.select_next_item(),
 				-- Select the [p]revious item
-				-- ["<C-p>"] = cmp.mapping.select_prev_item(),
+				["<C-k>"] = cmp.mapping.select_prev_item(),
 
 				-- Accept ([y]es) the completion.
 				--  This will auto-import if your LSP supports it.
 				--  This will expand snippets if the LSP sent a snippet.
 				-- ["<C-y>"] = cmp.mapping.confirm({ select = true }),
 				--
-				-- -- Manually trigger a completion from nvim-cmp.
-				-- --  Generally you don't need this, because nvim-cmp will display
-				-- --  completions whenever it has completion options available.
-				-- ['<C-Space>'] = cmp.mapping.complete {},
-				-- ['<C-e>'] = cmp.mapping.close(),
-
-				["<C-j>"] = cmp.mapping.scroll_docs(-4),
-				["<C-k>"] = cmp.mapping.scroll_docs(4),
+				["<C-n>"] = cmp.mapping.scroll_docs(-4),
+				["<C-p>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
+
 				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() and has_words_before() then
-						cmp.select_next_item()
-					elseif luasnip.expand_or_jumpable() then
-						luasnip.expand_or_jump()
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-
-				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif luasnip.jumpable(-1) then
-						luasnip.jump(-1)
+						cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace })
 					else
 						fallback()
 					end
-				end, { "i", "s" }),
+				end, { "i", "s", "c" }),
 
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				-- Think of <c-l> as moving to the right of your snippet expansion.
 				--  So if you have a snippet that's like:
 				--  function $name($args)
