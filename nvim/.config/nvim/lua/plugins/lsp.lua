@@ -90,7 +90,25 @@ return { -- LSP Configuration & Plugins
 		})
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+		-- Override default capabilities because of: https://github.com/hrsh7th/cmp-nvim-lsp/issues/72
+		capabilities = vim.tbl_deep_extend(
+			"force",
+			capabilities,
+			require("cmp_nvim_lsp").default_capabilities({
+				resolveSupport = {
+					properties = {
+						"documentation",
+						"detail",
+						"additionalTextEdits",
+						"sortText",
+						"filterText",
+						"insertText",
+						"insertTextFormat",
+						"insertTextMode",
+					},
+				},
+			})
+		)
 
 		local servers = {
 			-- clangd = {},
