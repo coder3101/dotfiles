@@ -58,6 +58,15 @@ return { -- Adds git related signs to the gutter, as well as utilities for manag
 				vim.keymap.set(mode, l, r, opts)
 			end
 
+			-- Navigation
+			map("n", "<leader>hn", function()
+				gitsigns.nav_hunk("next")
+			end)
+
+			map("n", "<leader>hN", function()
+				gitsigns.nav_hunk("prev")
+			end)
+
 			-- Actions
 			map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "[s]tage hunk" })
 			map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "[r]eset hunk" })

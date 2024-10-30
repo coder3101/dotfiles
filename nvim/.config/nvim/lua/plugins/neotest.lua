@@ -13,7 +13,10 @@ return {
 		require("neotest").setup({
 			adapters = {
 				require("neotest-go")({
-					args = { "-count=1", "-timeout=30s" },
+					experimental = {
+						test_table = true,
+					},
+					args = { "-count=1", "-timeout=90s" },
 				}),
 				require("neotest-python"),
 				require("neotest-rust"),
