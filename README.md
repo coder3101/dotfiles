@@ -7,3 +7,5 @@ Stow managed dot files for my UNIX machine
  
 You can install `stow` from your package manager, for instance on mac `brew install stow`. <br>
 Once `stow` is installed, run `stow nvim` to create appropriate symlinks to neovim configs.
+
+In order to install the plugins for tmux, run `<prefix> i`
