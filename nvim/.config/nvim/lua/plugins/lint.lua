@@ -1,10 +1,20 @@
 return {
 	"mfussenegger/nvim-lint",
-	enabled = false,
+	enabled = true,
 	config = function()
+		-- In a work env, set the config
+		if vim.env.CTHULHU_DIR ~= nil then
+			require("lint").linters.revive.args = {
+				"-formatter",
+				"json",
+				"-config",
+				vim.env.CTHULHU_DIR .. "/docode/src/do/revive.toml",
+			}
+		end
 		require("lint").linters_by_ft = {
 			proto = { "buf_lint", "protolint" },
 			rust = { "clippy" },
+			go = { "revive" },
 		}
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 			callback = function()
