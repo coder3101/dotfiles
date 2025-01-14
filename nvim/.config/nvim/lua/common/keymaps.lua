@@ -49,7 +49,6 @@ keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l")
 keymap.set("n", "<leader>T", "<cmd>terminal<cr>")
 keymap.set("n", "<leader>j", "<cmd>cn<cr>")
 keymap.set("n", "<leader>k", "<cmd>cp<cr>")
-keymap.set("n", "<leader>gs", "<cmd>G<cr>")
 keymap.set("n", "<leader>o", "o<Esc>0_D")
 keymap.set("n", "<leader>O", "O<Esc>0_D")
 keymap.set("n", "<leader>rr", "<cmd>bufdo e<cr>") -- Refresh all buffers
