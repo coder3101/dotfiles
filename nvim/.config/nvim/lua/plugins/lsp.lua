@@ -145,7 +145,6 @@ return { -- LSP Configuration & Plugins
 			},
 			html = {},
 			cssls = {},
-			protols = {},
 			tailwindcss = {},
 			yamlls = {},
 			jsonls = {},
@@ -226,6 +225,7 @@ return { -- LSP Configuration & Plugins
 				end,
 			},
 		})
+		require("lspconfig").protols.setup({})
 		require("lspsaga").setup({
 			lightbulb = {
 				enable = false,
