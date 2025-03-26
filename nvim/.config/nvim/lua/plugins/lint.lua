@@ -12,7 +12,6 @@ return {
 			}
 		end
 		require("lint").linters_by_ft = {
-			proto = { "buf_lint", "protolint" },
 			rust = { "clippy" },
 			go = { "revive" },
 		}

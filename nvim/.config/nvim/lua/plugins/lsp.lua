@@ -213,7 +213,7 @@ return { -- LSP Configuration & Plugins
 		}
 
 		require("mason").setup()
-		require("mason-tool-installer").setup({ ensure_installed = { "stylua", "protolint", "revive" } })
+		require("mason-tool-installer").setup({ ensure_installed = { "stylua", "revive" } })
 		require("mason-lspconfig").setup({
 			ensure_installed = vim.tbl_keys(servers or {}),
 			automatic_installation = false,
