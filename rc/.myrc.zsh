@@ -17,8 +17,5 @@ function gdiff() {
 # This allows me to add hunks interactively
 alias gadd="git add -i -p"
 
-# Alacritty magic to make it in ssh
-alias ssh="TERM=xterm-256color $(which ssh)"
-
 # Sometimes, nvid is good for show-offs
 alias nvid="neovide --maximized --title-hidden --fork"

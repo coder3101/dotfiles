@@ -9,3 +9,6 @@ You can install `stow` from your package manager, for instance on mac `brew inst
 Once `stow` is installed, run `stow nvim` to create appropriate symlinks to neovim configs.
 
 In order to install the plugins for tmux, run `<prefix> i` (default prefix is <kbd>Ctrl-B</kbd>)
+
+## Font
+Use [Monaspace by githubnext](https://github.com/githubnext/monaspace/tree/main)
