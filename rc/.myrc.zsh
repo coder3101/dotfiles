@@ -19,3 +19,6 @@ alias gadd="git add -i -p"
 
 # Sometimes, nvid is good for show-offs
 alias nvid="neovide --maximized --title-hidden --fork"
+
+# Add zoxide
+eval "$(zoxide init zsh --cmd cd)"

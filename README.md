@@ -10,5 +10,9 @@ Once `stow` is installed, run `stow nvim` to create appropriate symlinks to neov
 
 In order to install the plugins for tmux, run `<prefix> i` (default prefix is <kbd>Ctrl-B</kbd>)
 
+## Zoxide
+
+Run `brew install zoxide` to install zoxide and myrc would create an alias for `cd` with `zoxide`
+
 ## Font
 Use [Monaspace by githubnext](https://github.com/githubnext/monaspace/tree/main)
