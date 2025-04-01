@@ -70,7 +70,7 @@ return { -- Autocompletion
 					else
 						fallback()
 					end
-				end, { "i", "s", "c" }),
+				end, { "i", "s" }),
 
 				-- Think of <c-l> as moving to the right of your snippet expansion.
 				--  So if you have a snippet that's like:
