@@ -22,3 +22,7 @@ alias nvid="neovide --maximized --title-hidden --fork"
 
 # Add zoxide
 eval "$(zoxide init zsh --cmd cd)"
+
+# Temporary SSH means SSH without host verification
+alias tssh='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+
