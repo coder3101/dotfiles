@@ -186,6 +186,9 @@ return { -- LSP Configuration & Plugins
 								hideNamedConstructor = false,
 							},
 						},
+						cargo = {
+							allFeatures = true,
+						},
 					},
 				},
 			},
