@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 config.font = wezterm.font("Monaspace Neon")
-config.font_size = 16.0
+config.font_size = 15.0
 config.color_scheme = "Catppuccin Macchiato"
 config.window_background_image = os.getenv("HOME") .. "/.config/wezterm/images/mountain.jpg"
 config.window_background_opacity = 1.0
