@@ -14,6 +14,16 @@ function gdiff() {
     git diff $1..HEAD -- .
 }
 
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+  function pbcopy() {
+    wl-copy
+  }
+
+  function pbpaste() {
+    wl-paste
+  }
+fi
+
 # This allows me to add hunks interactively
 alias gadd="git add -i -p"
 
