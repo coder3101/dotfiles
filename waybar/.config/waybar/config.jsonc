@@ -68,7 +68,8 @@
     },
     "clock": {
         "timezone": "Asia/Kolkata",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M %p %a, %d %b}",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
@@ -93,22 +94,15 @@
     "network#speed": {
         "interval": 3,
         "format": "{ifname}",
-        "format-wifi": "{icon} {bandwidthDownBytes}  {bandwidthUpBytes} ",
-        "format-ethernet": "{icon} {bandwidthDownBytes}  {bandwidthUpBytes} ",
+        "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
+        "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
         "format-disconnected": "󰌙",
         "tooltip-format": "{ipaddr}",
         "format-linked": "󰈁 {ifname} (No IP)",
         "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
         "tooltip-format-ethernet": "{ifname} 󰌘",
         "tooltip-format-disconnected": "󰌙 Disconnected",
-        "max-length": 30,
-        "format-icons": [
-            "󰤯",
-            "󰤟",
-            "󰤢",
-            "󰤥",
-            "󰤨"
-        ]
+        "max-length": 30
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
