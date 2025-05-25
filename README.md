@@ -16,3 +16,6 @@ Run `brew install zoxide` to install zoxide and myrc would create an alias for `
 
 ## Font
 Use [Monaspace by githubnext](https://github.com/githubnext/monaspace/tree/main)
+
+## Wallpapers
+Stow the wallpapers on `~/Wallpapers` because wezterm and hyprland uses wallpapers from here
