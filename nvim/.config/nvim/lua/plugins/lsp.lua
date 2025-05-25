@@ -151,6 +151,7 @@ return { -- LSP Configuration & Plugins
 			dockerls = {},
 			bashls = {},
 			svelte = {},
+			protols = {},
 			rust_analyzer = {
 				settings = {
 					["rust-analyzer"] = {
@@ -228,7 +229,6 @@ return { -- LSP Configuration & Plugins
 				end,
 			},
 		})
-		require("lspconfig").protols.setup({})
 		require("lspsaga").setup({
 			lightbulb = {
 				enable = false,
