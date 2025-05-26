@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local dimmer = { brightness = 0.05 }
+local dimmer = { brightness = 0.08 }
 local config = {}
 
 local is_linux = function()
@@ -23,7 +23,7 @@ config.background = {
 	},
 }
 config.window_background_opacity = 1.0
-config.text_background_opacity = 0.5
+config.text_background_opacity = 0.6
 config.window_padding = {
 	left = 0,
 	right = 0,
