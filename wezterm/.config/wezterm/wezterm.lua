@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local dimmer = { brightness = 0.08 }
+local dimmer = { brightness = 0.5 }
 local config = {}
 
 local is_linux = function()
@@ -17,13 +17,13 @@ config.color_scheme = "Catppuccin Macchiato"
 config.background = {
 	{
 		source = {
-			File = os.getenv("HOME") .. "/Wallpapers/Anime-Girl4.jpeg",
+			File = os.getenv("HOME") .. "/Wallpapers/abstract.png",
 		},
 		hsb = dimmer,
 	},
 }
 config.window_background_opacity = 1.0
-config.text_background_opacity = 0.6
+config.text_background_opacity = 0.5
 config.window_padding = {
 	left = 0,
 	right = 0,
