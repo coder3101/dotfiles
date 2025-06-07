@@ -151,7 +151,7 @@ return { -- LSP Configuration & Plugins
 			dockerls = {},
 			bashls = {},
 			svelte = {},
-			protols = {},
+			-- protols = {},
 			rust_analyzer = {
 				settings = {
 					["rust-analyzer"] = {
@@ -229,11 +229,14 @@ return { -- LSP Configuration & Plugins
 				end,
 			},
 		})
+		-- Non-mason version for testing
+		require("lspconfig").protols.setup({})
 		require("lspsaga").setup({
 			lightbulb = {
 				enable = false,
 			},
 		})
+
 		vim.diagnostic.config({
 			virtual_text = {
 				prefix = "●",

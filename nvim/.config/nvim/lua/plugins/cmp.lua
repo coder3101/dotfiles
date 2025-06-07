@@ -56,17 +56,17 @@ return { -- Autocompletion
 				["<CR>"] = cmp.mapping({
 					i = function(fallback)
 						if cmp.visible() and cmp.get_active_entry() then
-							cmp.confirm({ behavior = cmp.ConfirmBehavior.Select, select = false })
+							cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
 						else
 							fallback()
 						end
 					end,
-					s = cmp.mapping.confirm({ select = true }),
-					c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+					s = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }),
+					c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
 				}),
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
-						cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace })
+						cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert })
 					else
 						fallback()
 					end
