@@ -18,6 +18,7 @@ return {
 			python = { "isort", "black" },
 			javascript = { "prettier" },
 			go = { "goimports", "gofmt" },
+			markdown = { "prettier" },
 		},
 		-- -- Set up format-after-save
 		format_after_save = function(bufnr)
