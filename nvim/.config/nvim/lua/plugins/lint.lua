@@ -12,7 +12,7 @@ return {
 			}
 		end
 		require("lint").linters_by_ft = {
-			rust = { "clippy" },
+			-- rust = { "clippy" },
 			go = { "revive" },
 		}
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
