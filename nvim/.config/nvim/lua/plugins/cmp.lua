@@ -1,5 +1,6 @@
 return { -- Autocompletion
 	"hrsh7th/nvim-cmp",
+	enabled = false,
 	event = "InsertEnter",
 	dependencies = {
 		-- Snippet Engine & its associated nvim-cmp source
@@ -53,17 +54,13 @@ return { -- Autocompletion
 				["<C-p>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
-				["<CR>"] = cmp.mapping({
-					i = function(fallback)
-						if cmp.visible() and cmp.get_active_entry() then
-							cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
-						else
-							fallback()
-						end
-					end,
-					s = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }),
-					c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
-				}),
+				["<CR>"] = cmp.mapping(function(fallback)
+					if cmp.visible() and cmp.get_active_entry() then
+						cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert })

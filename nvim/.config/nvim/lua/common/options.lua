@@ -17,6 +17,7 @@ opt.guifont = "JetbrainsMono Nerd Font:h16"
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+opt.winborder = "rounded"
 
 -- backspaces
 opt.backspace = "indent,eol,start"
