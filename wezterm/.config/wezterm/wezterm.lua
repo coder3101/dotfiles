@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local dimmer = { brightness = 0.5 }
+local dimmer = { brightness = 0.1 }
 local config = {}
 
 local is_linux = function()
@@ -17,7 +17,7 @@ config.color_scheme = "Catppuccin Macchiato"
 config.background = {
 	{
 		source = {
-			File = os.getenv("HOME") .. "/Wallpapers/abstract.png",
+			File = os.getenv("HOME") .. "/Wallpapers/earth.jpg",
 		},
 		hsb = dimmer,
 	},
