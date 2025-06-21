@@ -14,6 +14,7 @@ return {
 		require("lint").linters_by_ft = {
 			-- rust = { "clippy" },
 			go = { "revive" },
+			yaml = { "actionlint" },
 		}
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 			callback = function()
