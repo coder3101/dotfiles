@@ -11,6 +11,11 @@ return {
 	},
 	config = function()
 		require("neotest").setup({
+			discovery = {
+				-- Drastically improve performance in ginormous projects by
+				-- only AST-parsing the currently opened buffer.
+				enabled = false,
+			},
 			adapters = {
 				require("neotest-go")({
 					experimental = {

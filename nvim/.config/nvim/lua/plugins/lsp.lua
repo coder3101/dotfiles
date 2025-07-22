@@ -2,8 +2,8 @@ return { -- LSP Configuration & Plugins
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		-- Automatically install LSPs and related tools to stdpath for neovim
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"nvimdev/lspsaga.nvim",
 
@@ -220,14 +220,7 @@ return { -- LSP Configuration & Plugins
 		require("mason-tool-installer").setup({ ensure_installed = { "stylua", "revive" } })
 		require("mason-lspconfig").setup({
 			ensure_installed = vim.tbl_keys(servers or {}),
-			automatic_installation = false,
-			handlers = {
-				function(server_name)
-					local server = servers[server_name] or {}
-					server.capabilities = capabilities
-					require("lspconfig")[server_name].setup(server)
-				end,
-			},
+			automatic_enable = true,
 		})
 		-- Non-mason version for testing
 		require("lspconfig").protols.setup({})
@@ -236,6 +229,11 @@ return { -- LSP Configuration & Plugins
 				enable = false,
 			},
 		})
+
+		-- Setup configuration for each servers
+		for server_name, server_opts in pairs(servers) do
+			vim.lsp.config[server_name] = server_opts or {}
+		end
 
 		vim.diagnostic.config({
 			virtual_text = {
