@@ -17,7 +17,7 @@ config.color_scheme = "Catppuccin Macchiato"
 config.background = {
 	{
 		source = {
-			File = os.getenv("HOME") .. "/Wallpapers/earth.jpg",
+			File = os.getenv("HOME") .. "/Wallpapers/Anime-Girl5.jpg",
 		},
 		hsb = dimmer,
 	},
