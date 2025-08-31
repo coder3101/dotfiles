@@ -15,7 +15,7 @@ In order to install the plugins for tmux, run `<prefix> i` (default prefix is <k
 Run `brew install zoxide` to install zoxide and myrc would create an alias for `cd` with `zoxide`
 
 ## Font
-Use [Monaspace by githubnext](https://github.com/githubnext/monaspace/tree/main)
+Use [Monaspace by githubnext](https://github.com/githubnext/monaspace/tree/main) for editor and optionally if spaceship prompt does not shows the glyphs install `noto-fonts-emoji`
 
 ## Wallpapers
 Stow the wallpapers on `~/Wallpapers` because wezterm and hyprland uses wallpapers from here

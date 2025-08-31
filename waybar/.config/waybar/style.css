@@ -1,6 +1,6 @@
 * {
-    font-family: "Monaspace Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: "Monaspace Neon", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
     min-height: 0;
 }
 
@@ -62,31 +62,13 @@ window#waybar.hidden {
     border-radius: 6px;
 }
 
-#custom-media {
-    border-radius: 8px;
-    margin-right: 4px;
-    padding: 4px 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-}
-
-#idle_inhibitor,
-#mpd {
-    background-color: rgba(50, 50, 70, 0.7);
-    padding: 6px 10px;
-    margin: 0 4px;
-    border-radius: 8px;
-    transition: background 0.2s ease;
-}
-
 #clock:hover,
 #cpu:hover,
 #memory:hover,
 #temperature:hover,
 #network:hover,
 #pulseaudio:hover,
-#custom-media:hover,
-#idle_inhibitor:hover,
-#mpd:hover {
+#custom-media:hover {
     background-color: rgba(70, 70, 100, 0.9);
 }
 
@@ -124,41 +106,6 @@ window#waybar.hidden {
     color: #6c7086;
 }
 
-#custom-media {
-    color: #94e2d5;
-}
-
-#mpd {
-    color: #cba6f7;
-}
-
-#mpd.disconnected {
-    background-color: #f38ba8;
-    color: #1e1e2e;
-}
-
-#mpd.stopped {
-    color: #6c7086;
-}
-
 #tray {
     background-color: rgba(50, 50, 70, 0.7);
-}
-
-#idle_inhibitor.activated {
-    background-color: #a6e3a1;
-    color: #1e1e2e;
-}
-
-#keyboard-state {
-    background: #b4befe;
-    color: #1e1e2e;
-    border-radius: 6px;
-    padding: 4px 6px;
-    margin: 0 4px;
-}
-
-#keyboard-state>label.locked {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
 }
