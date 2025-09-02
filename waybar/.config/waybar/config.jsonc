@@ -1,34 +1,45 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 5, // Gaps between modules (4px)
-    // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock"
     ],
     "modules-right": [
-        "pulseaudio",
+        // "pulseaudio",
         "network#speed",
         "cpu",
         "memory",
         "temperature",
         "tray",
-        "clock",
         "custom/notification",
         "custom/power"
     ],
-    "hyprland/window": {
-        "format": "{}",
-        "max-length": 70,
-        "all-outputs": true,
-        "offscreen-css": true,
-        "offscreen-css-text": "(inactive)"
+    "hyprland/workspaces": {
+        "format": "{icon} {windows}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": ""
+        },
+        "workspace-taskbar": {
+            "enable": true,
+            "on-click-window": "hyprctl dispatch focuswindow address:{address}",
+            "ignore-list": [
+                "wofi"
+            ]
+        },
+        "persistent-workspaces": {
+            "*": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
     },
     "clock": {
         "timezone": "Asia/Kolkata",
@@ -93,13 +104,13 @@
         "format": "{} {icon}",
         "format-icons": {
             "notification": "<span foreground='red'><sup></sup></span>",
-            "none": "",
+            "none": " ",
             "dnd-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-none": "",
+            "dnd-none": " ",
             "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "inhibited-none": "",
+            "inhibited-none": " ",
             "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": ""
+            "dnd-inhibited-none": " "
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
