@@ -1,12 +1,11 @@
 return {
 	"nvim-neotest/neotest",
-	commit = "52fca6717ef972113ddd6ca223e30ad0abb2800c",
 	dependencies = {
 		"nvim-neotest/nvim-nio",
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"antoinemadec/FixCursorHold.nvim",
-		"nvim-neotest/neotest-go",
+		{ "fredrikaverpil/neotest-golang", version = "*" },
 		"rouge8/neotest-rust",
 		"nvim-neotest/neotest-python",
 	},
@@ -18,11 +17,8 @@ return {
 				enabled = false,
 			},
 			adapters = {
-				require("neotest-go")({
-					experimental = {
-						test_table = true,
-					},
-					args = { "-count=1", "-timeout=90s" },
+				require("neotest-golang")({
+					go_test_args = { "-v", "-race", "-count=1", "-timeout=90s" },
 				}),
 				require("neotest-python"),
 				require("neotest-rust"),
