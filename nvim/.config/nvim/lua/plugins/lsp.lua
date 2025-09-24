@@ -223,7 +223,8 @@ return { -- LSP Configuration & Plugins
 			automatic_enable = true,
 		})
 		-- Non-mason version for testing
-		require("lspconfig").protols.setup({})
+		vim.lsp.config("protols", {})
+		vim.lsp.enable("protols")
 		require("lspsaga").setup({
 			lightbulb = {
 				enable = false,
