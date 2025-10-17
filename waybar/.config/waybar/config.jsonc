@@ -13,6 +13,7 @@
         "cpu",
         "memory",
         "temperature",
+        "custom/gpuinfo",
         "tray",
         "custom/notification",
         "custom/power"
@@ -119,5 +120,11 @@
         "format": " ⏻ ",
         "tooltip": false,
         "on-click": "wlogout --protocol layer-shell -b 2"
+    },
+    "custom/gpuinfo": {
+        "exec": "~/.config/waybar/gpuinfo.sh",
+        "interval": 5,
+        "on-click": "wezterm start -- nvtop",
+        "return-type": "json"
     }
 }

@@ -45,6 +45,7 @@ tooltip {
 #network:hover,
 #battery:hover,
 #cpu:hover,
+#custom-gpuinfo:hover,
 #memory:hover,
 #temperature:hover {
     transition: all .3s ease;
@@ -115,6 +116,7 @@ tooltip {
 
 #cpu,
 #memory,
+#custom-gpuinfo,
 #temperature {
     padding: 0px 5px;
     transition: all .3s ease;
