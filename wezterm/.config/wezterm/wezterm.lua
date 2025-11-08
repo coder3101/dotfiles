@@ -35,7 +35,7 @@ config.tab_bar_at_bottom = true
 
 -- Begin OS specific configuration
 if is_linux() then
-	config.font_size = 12.0
+	config.font_size = 11.0
 elseif is_darwin then
 	config.font_size = 17.0
 end

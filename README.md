@@ -19,3 +19,6 @@ Use [Monaspace by githubnext](https://github.com/githubnext/monaspace/tree/main)
 
 ## Wallpapers
 Stow the wallpapers on `~/Wallpapers` because wezterm and hyprland uses wallpapers from here
+
+## Tree-sitter CLI
+Must have tree-sitter CLI and a C compiler installed to be able to install parsers that comes with `nvim-treesitter`
