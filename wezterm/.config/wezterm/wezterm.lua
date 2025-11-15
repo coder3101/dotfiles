@@ -36,6 +36,12 @@ config.tab_bar_at_bottom = true
 -- Begin OS specific configuration
 if is_linux() then
 	config.font_size = 11.0
+	local act = wezterm.action
+	-- on hyprland with unixod, use shift+insert to paste and ctrl+insert to copy to/from clipboard
+	config.keys = {
+		{ key = "Insert", mods = "SHIFT", action = act.PasteFrom("Clipboard") },
+		{ key = "Insert", mods = "CTRL", action = act.CopyTo("Clipboard") },
+	}
 elseif is_darwin then
 	config.font_size = 17.0
 end
