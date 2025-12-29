@@ -20,6 +20,7 @@ return {
 				"css",
 				"html",
 				"svelte",
+				"helm",
 				"go",
 				"jsonnet",
 				"graphql",

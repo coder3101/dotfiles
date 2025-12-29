@@ -6,6 +6,10 @@ return { -- LSP Configuration & Plugins
 		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"nvimdev/lspsaga.nvim",
+		{
+			"qvalentin/helm-ls.nvim",
+			ft = "helm",
+		},
 
 		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
@@ -151,6 +155,15 @@ return { -- LSP Configuration & Plugins
 			dockerls = {},
 			bashls = {},
 			svelte = {},
+			helm_ls = {
+				settings = {
+					["helm-ls"] = {
+						yamlls = {
+							path = "yaml-language-server",
+						},
+					},
+				},
+			},
 			-- protols = {},
 			rust_analyzer = {
 				settings = {
